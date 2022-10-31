@@ -18,7 +18,7 @@ def extract_next_links(url, resp):
     # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
     mySoup = BeautifulSoup(resp.raw_response.content, "html.parser")
     linkList = list()
-    for link in mySoup.find_all('a'):
+    for link in mySoup.find_all(href = True):
        linkList.append(link.get('href'))
 
     return linkList
