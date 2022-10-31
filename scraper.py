@@ -18,7 +18,7 @@ def extract_next_links(url, resp):
     # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
     mySoup = BeautifulSoup(resp.raw_response.content, "html.parser")
    # for link in mySoup.find_all('a', attrs= 'href', )
-    return BeautifulSoup.find_all('a').get('href')
+    return mySoup.find_all('a').get('href')
 
 def is_valid(url):
     # Decide whether to crawl this url or not. 
