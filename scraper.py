@@ -24,8 +24,7 @@ def extract_next_links(url, resp):
         if 200 <= resp.status < 600:
             for link in mySoup.find_all(href = True):
                 linkList.append(link.get('href'))
-
-        return linkList
+            return linkList
     else: 
         return list()
 
@@ -38,10 +37,10 @@ def is_valid(url):
         if parsed.scheme not in set(["http", "https"]):
             return False
 
-        # if parsed.netloc not in set([".ics.uci.edu/",".cs.uci.edu/",
-         #   ".informatics.uci.edu/", ".stat.uci.edu/",
-         #   "today.uci.edu/department/information_computer_sciences/"]):
-         #   return False
+        if parsed.netloc not in set(["www.ics.uci.edu","www.cs.uci.edu", 
+            "www.informatics.uci.edu", "www.stat.uci.edu", 
+            "www.today.uci.edu/department/information_computer_sciences"]):
+            return False
 
         return not re.match(
             r".*\.(css|js|bmp|gif|jpe?g|ico"
