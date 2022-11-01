@@ -16,9 +16,9 @@ def addToReport(url, contents):
     myTokens = PartA.tokenizeText(contents)
     myFrequencies = PartA.computeWordFrequencies(myTokens)
     urlWithoutFrag= urldefrag(url)
-    updateReport(urlWithoutFrag, myFrequencies)
+    #updateReport(urlWithoutFrag, myFrequencies)
 
-def updateReport(url, tokenFrequencyDict):
+'''def updateReport(url, tokenFrequencyDict):
     NUMUNIQUEPAGES = len(UNIQUEPAGES)
     UNIQUEPAGES[url] = 1
     if len(tokenFrequencyDict) > MOSTWORDS:
@@ -30,3 +30,4 @@ def updateReport(url, tokenFrequencyDict):
     MYREPORT.write("number of unique pages: " + str(NUMUNIQUEPAGES))
     MYREPORT.close()
 
+'''
