@@ -3,7 +3,7 @@
 #doesn't carry over from last report
 import PartA #used to tokenize content of website
 from urllib.parse import urldefrag
-
+'''
 MYREPORT = open("myCrawlerReport.txt", 'w+')
 MYREPORT.close()
 
@@ -11,7 +11,7 @@ MOSTWORDS = 0
 MOSTWORDSURL = ''
 NUMUNIQUEPAGES = 0
 UNIQUEPAGES = dict()
-
+'''
 def addToReport(url, contents):
     myTokens = PartA.tokenizeText(contents)
     myFrequencies = PartA.computeWordFrequencies(myTokens)
