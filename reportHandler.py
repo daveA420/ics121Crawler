@@ -3,7 +3,7 @@
 #doesn't carry over from last report
 import PartA #used to tokenize content of website
 from urllib.parse import urldefrag
-'''
+
 MYREPORT = open("myCrawlerReport.txt", 'w+')
 MYREPORT.close()
 
@@ -11,14 +11,14 @@ MOSTWORDS = 0
 MOSTWORDSURL = ''
 NUMUNIQUEPAGES = 0
 UNIQUEPAGES = dict()
-'''
+
 def addToReport(url, contents):
     myTokens = PartA.tokenizeText(contents)
     myFrequencies = PartA.computeWordFrequencies(myTokens)
     urlWithoutFrag= urldefrag(url)
     #updateReport(urlWithoutFrag, myFrequencies)
 
-'''def updateReport(url, tokenFrequencyDict):
+def updateReport(url, tokenFrequencyDict):
     NUMUNIQUEPAGES = len(UNIQUEPAGES)
     UNIQUEPAGES[url] = 1
     if len(tokenFrequencyDict) > MOSTWORDS:
@@ -29,5 +29,3 @@ def addToReport(url, contents):
     MYREPORT.write("url with most words: " + MOSTWORDSURL)
     MYREPORT.write("number of unique pages: " + str(NUMUNIQUEPAGES))
     MYREPORT.close()
-
-'''
