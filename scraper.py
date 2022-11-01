@@ -1,10 +1,14 @@
 import re
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
+#my module that will make the report for this project
+import reportHandler
 
 def scraper(url, resp):
     links = extract_next_links(url, resp)
-    return [link for link in links if is_valid(link)]
+    #validLinks =[link for link in links if is_valid(link)]
+    #no longer necessary, is_Valid is used in extract_next_links
+    return links
 
 def extract_next_links(url, resp):
     # Implementation required.
@@ -23,7 +27,12 @@ def extract_next_links(url, resp):
         linkList = list()
         if 200 <= resp.status < 600:
             for link in mySoup.find_all(href = True):
-                linkList.append(link.get('href'))
+                finalLink = link.get('href')#store link
+                if(is_valid(finalLink)):
+                    linkList.append(link.get('href'))
+                    #give url and text in order to parse the text of the website
+                    reportHandler.addToReport(url, mySoup.get_text())
+
             return linkList
     else: 
         return list()
