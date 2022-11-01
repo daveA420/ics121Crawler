@@ -2,7 +2,7 @@ import re
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 #my module that will make the report for this project
-import reportHandler
+#mport reportHandler
 
 def scraper(url, resp):
     links = extract_next_links(url, resp)
