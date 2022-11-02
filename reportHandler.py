@@ -22,12 +22,13 @@ def updateReport(url, tokenFrequencyDict):
     global NUMUNIQUEPAGES
     global UNIQUEPAGES
     global MOSTWORDS
-
+    global MOSTWORDSURL
+    
     UNIQUEPAGES[url] = 1
     NUMUNIQUEPAGES = len(UNIQUEPAGES)
 
     if len(tokenFrequencyDict) > MOSTWORDS:
-        MOSTWORDSURL = url
+        MOSTWORDSURL = str(url)
         MOSTWORDS = len(tokenFrequencyDict)
     MYREPORT = open("myCrawlerReport.txt", 'r+')
     MYREPORT.write("most words: " + str(MOSTWORDS))
