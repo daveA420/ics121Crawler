@@ -16,7 +16,7 @@ def addToReport(url, contents):
     myTokens = PartA.tokenizeText(contents)
     myFrequencies = PartA.computeWordFrequencies(myTokens)
     urlWithoutFrag= urldefrag(url)
-    #updateReport(urlWithoutFrag, myFrequencies)
+    updateReport(urlWithoutFrag, myFrequencies)
 
 def updateReport(url, tokenFrequencyDict):
     NUMUNIQUEPAGES = len(UNIQUEPAGES)

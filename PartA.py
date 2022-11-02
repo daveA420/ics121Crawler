@@ -25,7 +25,7 @@ def tokenizeText(content):
         if((47 < ord(character) < 58) or ord(character) > 64 ):
             word += character
         else:
-            if(word.len() > 2):
+            if(len(word) > 2):
                 tokens.append(word)
             word = ''
     return tokens
