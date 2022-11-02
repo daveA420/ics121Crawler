@@ -19,8 +19,13 @@ def addToReport(url, contents):
     updateReport(urlWithoutFrag, myFrequencies)
 
 def updateReport(url, tokenFrequencyDict):
-    NUMUNIQUEPAGES = len(UNIQUEPAGES)
+    global NUMUNIQUEPAGES
+    global UNIQUEPAGES
+    global MOSTWORDS
+
     UNIQUEPAGES[url] = 1
+    NUMUNIQUEPAGES = len(UNIQUEPAGES)
+
     if len(tokenFrequencyDict) > MOSTWORDS:
         MOSTWORDSURL = url
         MOSTWORDS = len(tokenFrequencyDict)
