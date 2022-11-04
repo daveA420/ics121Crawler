@@ -23,7 +23,7 @@ def updateReport(url, tokenFrequencyDict):
     global UNIQUEPAGES
     global MOSTWORDS
     global MOSTWORDSURL
-    
+
     UNIQUEPAGES[url] = 1
     NUMUNIQUEPAGES = len(UNIQUEPAGES)
 
