@@ -1,4 +1,8 @@
+import nltk
+from nltk.corpus import stopwords
 
+#make global set of stopwords
+englishStopwords = set(stopwords.words('english'))
 def tokenize(pathname):
     #returns a list of tokens found in the given pathname
     tokens = list()
