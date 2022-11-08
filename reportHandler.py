@@ -1,7 +1,7 @@
 #make file if it don't exist
 #file is used to make my report
 #doesn't carry over from last report
-import PartA #used to tokenize content of website
+import newParser #used to tokenize content of website
 from urllib.parse import urldefrag
 
 MYREPORT = open("myCrawlerReport.txt", 'w+')
@@ -13,8 +13,8 @@ NUMUNIQUEPAGES = 0
 UNIQUEPAGES = dict()
 
 def addToReport(url, contents):
-    myTokens = PartA.tokenizeText(contents)
-    myFrequencies = PartA.computeWordFrequencies(myTokens)
+    myTokens = newParser.tokenizeText(contents)
+    myFrequencies = newParser.computeWordFrequencies(myTokens)
     urlWithoutFrag= urldefrag(url)
     updateReport(urlWithoutFrag, myFrequencies)
 
