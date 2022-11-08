@@ -4,7 +4,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
 
 #global set of stopwords
-english_stopwords = set(stopwords.word('english'))
+english_stopwords = set(stopwords.words('english'))
 
 def tokenizeText(content):
     global english_stopwords
