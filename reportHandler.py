@@ -4,7 +4,7 @@
 import newParser #used to tokenize content of website
 from urllib.parse import urldefrag
 
-MYREPORT = open("myCrawlerReport.txt", 'r+')
+MYREPORT = open("myCrawlerReport.txt", 'w+')
 MYREPORT.close()
 
 MOSTWORDS = 0
@@ -32,6 +32,7 @@ def updateReport(url, tokenFrequencyDict):
         MOSTWORDS = len(tokenFrequencyDict)
     try:
         MYREPORT = open("myCrawlerReport.txt", 'r+')
+        print(MYREPORT.tell())
         MYREPORT.write("most words: " + str(MOSTWORDS) + '\n')
         MYREPORT.write("url with most words: " + MOSTWORDSURL+ '\n')
         MYREPORT.write("number of unique pages: " + str(NUMUNIQUEPAGES)+ '\n')
