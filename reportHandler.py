@@ -25,7 +25,7 @@ def updateReport(url, tokenFrequencyDict):
     global MOSTWORDS
     global MOSTWORDSURL
 
-    UNIQUEPAGES[url] = 1
+    UNIQUEPAGES[url] = '0'
     NUMUNIQUEPAGES = len(UNIQUEPAGES)
 
     if len(tokenFrequencyDict) > MOSTWORDS:
