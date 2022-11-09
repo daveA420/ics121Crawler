@@ -30,8 +30,11 @@ def updateReport(url, tokenFrequencyDict):
     if len(tokenFrequencyDict) > MOSTWORDS:
         MOSTWORDSURL = str(url)
         MOSTWORDS = len(tokenFrequencyDict)
-    MYREPORT = open("myCrawlerReport.txt", 'w+')
-    MYREPORT.write("most words: " + str(MOSTWORDS) + '\n')
-    MYREPORT.write("url with most words: " + MOSTWORDSURL+ '\n')
-    MYREPORT.write("number of unique pages: " + str(NUMUNIQUEPAGES)+ '\n')
-    MYREPORT.close()
+    try:
+        MYREPORT = open("myCrawlerReport.txt", 'w+')
+        MYREPORT.write("most words: " + str(MOSTWORDS) + '\n')
+        MYREPORT.write("url with most words: " + MOSTWORDSURL+ '\n')
+        MYREPORT.write("number of unique pages: " + str(NUMUNIQUEPAGES)+ '\n')
+        MYREPORT.close()
+    except:
+            print('file Error')
