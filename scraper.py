@@ -51,7 +51,7 @@ def is_valid(url):
             "www.today.uci.edu/department/information_computer_sciences"]):
             return False
 
-        if urldefrag(url) in reportHandler.UNIQUEPAGES:
+        if str(urldefrag(url)) in reportHandler.UNIQUEPAGES:
             return False
 
         return not re.match(
