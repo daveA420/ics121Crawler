@@ -3,6 +3,7 @@
 #doesn't carry over from last report
 import newParser #used to tokenize content of website
 from urllib.parse import urldefrag
+import shelve
 
 MYREPORT = open("myCrawlerReport.txt", 'w+')
 MYREPORT.close()
@@ -10,7 +11,7 @@ MYREPORT.close()
 MOSTWORDS = 0
 MOSTWORDSURL = ''
 NUMUNIQUEPAGES = 0
-UNIQUEPAGES = dict()
+UNIQUEPAGES = shelve.open('UniquePages.shelve')
 
 def addToReport(url, contents):
     myTokens = newParser.tokenizeText(contents)
@@ -32,7 +33,7 @@ def updateReport(url, tokenFrequencyDict):
         MOSTWORDS = len(tokenFrequencyDict)
     try:
         MYREPORT = open("myCrawlerReport.txt", 'w+')
-        print(MYREPORT.tell())
+
         MYREPORT.write("most words: " + str(MOSTWORDS) + '\n')
         MYREPORT.write("url with most words: " + MOSTWORDSURL+ '\n')
         MYREPORT.write("number of unique pages: " + str(NUMUNIQUEPAGES) + '\n')
