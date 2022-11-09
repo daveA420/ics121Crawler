@@ -1,5 +1,5 @@
 import re
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urldefrag
 from bs4 import BeautifulSoup
 #my module that will make the report for this project
 import reportHandler
@@ -49,6 +49,9 @@ def is_valid(url):
         if parsed.netloc not in set(["www.ics.uci.edu","www.cs.uci.edu", 
             "www.informatics.uci.edu", "www.stat.uci.edu", 
             "www.today.uci.edu/department/information_computer_sciences"]):
+            return False
+
+        if urldefrag(url) in reportHandler.UNIQUEPAGES:
             return False
 
         return not re.match(
