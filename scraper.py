@@ -52,6 +52,7 @@ def is_valid(url):
             return False
 
         if str(urldefrag(url)) in reportHandler.UNIQUEPAGES:
+            print('found a copy page')
             return False
 
         return not re.match(
