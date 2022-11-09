@@ -36,6 +36,7 @@ def updateReport(url, tokenFrequencyDict):
         MYREPORT.write("most words: " + str(MOSTWORDS) + '\n')
         MYREPORT.write("url with most words: " + MOSTWORDSURL+ '\n')
         MYREPORT.write("number of unique pages: " + str(NUMUNIQUEPAGES))
+        MYREPORT.write("reached the end")
         MYREPORT.close()
     except:
             print('file Error')
