@@ -3,6 +3,7 @@ nltk.download('stopwords')
 nltk.download('punkt')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
+from simhash import Simhash
 
 #global set of stopwords
 english_stopwords = set(stopwords.words('english'))
@@ -15,7 +16,7 @@ def tokenizeText(content):
     for word in tokens:
         if word not in english_stopwords:
             tokensWithoutStopWords.append(word)
-
+    print(Simhash(tokensWithoutStopWords))
     return tokensWithoutStopWords
 
 def computeWordFrequencies(tokens):
