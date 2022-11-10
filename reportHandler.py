@@ -32,12 +32,12 @@ def updateReport(url, tokenFrequencyDict, subdomain):
     if str(url) not in UNIQUEPAGES:
 
         if str(subdomain) not in UNIQUESUBDOMAINS:
-            UNIQUESUBDOMAINS[str(subdomain)] = 0
+            UNIQUESUBDOMAINS[str(subdomain)] = 1
         else:
             UNIQUESUBDOMAINS[str(subdomain)] += 1
 
     UNIQUEPAGES[str(url)] = True
-    NUMUNIQUEPAGES = 1
+    NUMUNIQUEPAGES = 0
     for page in UNIQUEPAGES:
         NUMUNIQUEPAGES += 1
 
