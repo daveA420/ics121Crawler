@@ -28,12 +28,14 @@ def updateReport(url, tokenFrequencyDict, subdomain):
     global MOSTWORDSURL
     global UNIQUESUBDOMAINS
 
+    print(str(url))
     if str(url) not in UNIQUEPAGES:
+        print('its unique')
         if str(subdomain) not in UNIQUESUBDOMAINS:
             UNIQUESUBDOMAINS[str(subdomain)] = 0
         else:
             UNIQUESUBDOMAINS[str(subdomain)] += 1
-            
+
     UNIQUEPAGES[str(url)] = True
     NUMUNIQUEPAGES = 0
     for page in UNIQUEPAGES:
