@@ -16,7 +16,7 @@ def tokenizeText(content):
     for word in tokens:
         if word not in english_stopwords:
             tokensWithoutStopWords.append(word)
-    print(Simhash(tokensWithoutStopWords))
+    #print(Simhash(tokensWithoutStopWords))
     return tokensWithoutStopWords
 
 def computeWordFrequencies(tokens):
