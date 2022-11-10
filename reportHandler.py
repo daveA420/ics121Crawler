@@ -29,7 +29,10 @@ def updateReport(url, tokenFrequencyDict, subdomain):
     global UNIQUESUBDOMAINS
 
     UNIQUEPAGES[str(url)] = True
-    NUMUNIQUEPAGES = len(UNIQUEPAGES)
+    NUMUNIQUEPAGES = 0
+    for page in UNIQUEPAGES:
+        NUMUNIQUEPAGES += 1
+ #   NUMUNIQUEPAGES = len(UNIQUEPAGES)
 
     if len(tokenFrequencyDict) > MOSTWORDS:
         MOSTWORDSURL = str(url)
