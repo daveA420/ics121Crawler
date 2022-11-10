@@ -28,19 +28,23 @@ def updateReport(url, tokenFrequencyDict, subdomain):
     global MOSTWORDSURL
     global UNIQUESUBDOMAINS
 
+    if str(url) not in UNIQUEPAGES:
+        if str(subdomain) not in UNIQUESUBDOMAINS:
+            UNIQUESUBDOMAINS[str(subdomain)] = 0
+        else:
+            UNIQUESUBDOMAINS[str(subdomain)] += 1
+            
     UNIQUEPAGES[str(url)] = True
     NUMUNIQUEPAGES = 0
     for page in UNIQUEPAGES:
         NUMUNIQUEPAGES += 1
+
  #   NUMUNIQUEPAGES = len(UNIQUEPAGES)
 
     if len(tokenFrequencyDict) > MOSTWORDS:
         MOSTWORDSURL = str(url)
         MOSTWORDS = len(tokenFrequencyDict)
-    if str(subdomain) not in UNIQUESUBDOMAINS:
-        UNIQUESUBDOMAINS[str(subdomain)] = 0
-    else:
-        UNIQUESUBDOMAINS[str(subdomain)] += 1
+
     try:
         MYREPORT = open("myCrawlerReport.txt", 'w+')
 
