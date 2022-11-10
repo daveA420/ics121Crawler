@@ -8,8 +8,7 @@ def scraper(url, resp):
     links = extract_next_links(url, resp)
     #validLinks =[link for link in links if is_valid(link)]
     #no longer necessary, is_Valid is used in extract_next_links
-    global UNIQUEPAGES
-    UNIQUEPAGES.sync()
+    reportHandler.UNIQUEPAGES.sync()
     return links
 
 def extract_next_links(url, resp):
