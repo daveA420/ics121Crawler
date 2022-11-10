@@ -18,9 +18,9 @@ def addToReport(url, contents):
     myFrequencies = newParser.computeWordFrequencies(myTokens)
     urlWithoutFrag= urldefrag(url).url
     sub = urlparse(urlWithoutFrag).netloc
-    updateReport(urlWithoutFrag, myFrequencies, sub)
+    updateReport(urlWithoutFrag, myTokens, sub)
 
-def updateReport(url, tokenFrequencyDict, subdomain):
+def updateReport(url, tokens, subdomain):
     global NUMUNIQUEPAGES
     global UNIQUEPAGES
     global MOSTWORDS
@@ -38,9 +38,9 @@ def updateReport(url, tokenFrequencyDict, subdomain):
 
     NUMUNIQUEPAGES = len(UNIQUEPAGES)
 
-    if len(tokenFrequencyDict) > MOSTWORDS:
+    if len(tokens) > MOSTWORDS:
         MOSTWORDSURL = str(url)
-        MOSTWORDS = len(tokenFrequencyDict)
+        MOSTWORDS = len(tokens)
 
     try:
         MYREPORT.seek(0)
