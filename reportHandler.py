@@ -49,12 +49,12 @@ def updateReport(url, tokenFrequencyDict, subdomain):
         MOSTWORDS = len(tokenFrequencyDict)
 
     try:
-        MYREPORT = open("myCrawlerReport.txt", 'w+')
+        MYREPORT.seek(0)
 
         MYREPORT.write("most words: " + str(MOSTWORDS) + '\n')
         MYREPORT.write("url with most words: " + MOSTWORDSURL+ '\n')
         MYREPORT.write("number of unique pages: " + str(NUMUNIQUEPAGES) + '\n')
         MYREPORT.write(str([sub +'   ' + str(UNIQUESUBDOMAINS[sub]) for sub in UNIQUESUBDOMAINS]))
-        MYREPORT.close()
+
     except:
             print('file Error')
