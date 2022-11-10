@@ -37,7 +37,7 @@ def updateReport(url, tokenFrequencyDict, subdomain):
             UNIQUESUBDOMAINS[str(subdomain)] += 1
 
     UNIQUEPAGES[str(url)] = True
-    NUMUNIQUEPAGES = 0
+    NUMUNIQUEPAGES = 1
     for page in UNIQUEPAGES:
         NUMUNIQUEPAGES += 1
 
