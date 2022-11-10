@@ -15,7 +15,6 @@ UNIQUEPAGES = shelve.open('UniquePages.shelve')
 UNIQUESUBDOMAINS = shelve.open('uniqueDomains.shelve')
 
 def addToReport(url, contents):
-    print('og url: ' + str(url))
     myTokens = newParser.tokenizeText(contents)
     myFrequencies = newParser.computeWordFrequencies(myTokens)
     urlWithoutFrag= urldefrag(url).url

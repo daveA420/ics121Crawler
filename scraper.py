@@ -46,7 +46,7 @@ def is_valid(url):
         parsed = urlparse(url)
         if parsed.scheme not in set(["http", "https"]):
             return False
-
+        print(str(url) + '   inside isvalid')
         if parsed.netloc not in set(["www.ics.uci.edu","www.cs.uci.edu", 
             "www.informatics.uci.edu", "www.stat.uci.edu", 
             "www.today.uci.edu/department/information_computer_sciences"]):
