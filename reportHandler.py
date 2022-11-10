@@ -27,8 +27,6 @@ def updateReport(url, tokenFrequencyDict, subdomain):
     global MOSTWORDSURL
     global UNIQUESUBDOMAINS
 
-    print(str(url))
-    print(str(subdomain))
     if str(url) not in UNIQUEPAGES:
 
         if str(subdomain) not in UNIQUESUBDOMAINS:
