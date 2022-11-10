@@ -17,7 +17,7 @@ UNIQUESUBDOMAINS = shelve.open('uniqueDomains.shelve')
 def addToReport(url, contents):
     myTokens = newParser.tokenizeText(contents)
     myFrequencies = newParser.computeWordFrequencies(myTokens)
-    urlWithoutFrag= urldefrag(url)
+    urlWithoutFrag= urldefrag(url).url
     sub = urlparse(urlWithoutFrag).netloc
     updateReport(urlWithoutFrag, myFrequencies, sub)
 
