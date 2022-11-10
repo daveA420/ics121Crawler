@@ -44,7 +44,7 @@ def updateReport(url, tokenFrequencyDict, subdomain):
         MYREPORT.write("most words: " + str(MOSTWORDS) + '\n')
         MYREPORT.write("url with most words: " + MOSTWORDSURL+ '\n')
         MYREPORT.write("number of unique pages: " + str(NUMUNIQUEPAGES) + '\n')
-        MYREPORT.write(str([sub + str(UNIQUESUBDOMAINS[sub]) + '\n' for sub in UNIQUESUBDOMAINS]))
+        MYREPORT.write(str([sub +'   ' + str(UNIQUESUBDOMAINS[sub]) for sub in UNIQUESUBDOMAINS]))
         MYREPORT.close()
     except:
             print('file Error')
