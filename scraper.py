@@ -32,7 +32,7 @@ def extract_next_links(url, resp):
                 if(is_valid(finalLink)):
                     linkList.append(link.get('href'))
                     #give url and text in order to parse the text of the website
-                    reportHandler.addToReport(url, mySoup.get_text())
+                    reportHandler.addToReport(finalLink, mySoup.get_text())
 
             return linkList
     else: 
