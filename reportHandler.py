@@ -29,8 +29,9 @@ def updateReport(url, tokenFrequencyDict, subdomain):
     global UNIQUESUBDOMAINS
 
     print(str(url))
+    print(str(subdomain))
     if str(url) not in UNIQUEPAGES:
-        print('its unique')
+
         if str(subdomain) not in UNIQUESUBDOMAINS:
             UNIQUESUBDOMAINS[str(subdomain)] = 0
         else:
