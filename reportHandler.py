@@ -37,7 +37,7 @@ def updateReport(url, tokenFrequencyDict, subdomain):
     if len(tokenFrequencyDict) > MOSTWORDS:
         MOSTWORDSURL = str(url)
         MOSTWORDS = len(tokenFrequencyDict)
-    if subdomain not in UNIQUESUBDOMAINS:
+    if str(subdomain) not in UNIQUESUBDOMAINS:
         UNIQUESUBDOMAINS[str(subdomain)] = 0
     else:
         UNIQUESUBDOMAINS[str(subdomain)] += 1
