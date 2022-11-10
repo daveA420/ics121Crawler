@@ -6,7 +6,6 @@ from urllib.parse import urldefrag, urlparse
 import shelve
 
 MYREPORT = open("myCrawlerReport.txt", 'w+')
-MYREPORT.close()
 
 MOSTWORDS = 0
 MOSTWORDSURL = ''
